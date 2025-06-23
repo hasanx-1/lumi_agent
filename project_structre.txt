@@ -1,0 +1,41 @@
+chatbot/
+├── config/
+│   └── config.yml                  # API keys, DB path, FAQ path Add Redis settings
+├── logs/
+│   ├── app.log                     
+│   └── pipeline.log            
+├── src/
+│   ├── __init__.py
+│   ├── api/
+│   │   └── app.py              # FastAPI app
+│   ├── model/
+│   │   └── load_models.py      #Hugging Face and OpenAI API clients
+│   ├── processing/
+│   │   ├── __init__.py
+│   │   ├── data_embedder.py     # FAQ embeddings
+│   │   ├── data_index.py        # FAISS index
+│   │   └── data_loader.py       # Load FAQ CSV
+│   ├── rag/
+│   │   ├── __init__.py
+│   │   ├── retriever.py         # Retrieve FAQs
+│   │   └── answer_generator.py  # Generate responses
+│   ├── tools/
+│   │   ├── __init__.py
+│   │   ├── agent.py        
+│   │   └── manager.py     
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   ├── logger.py            
+│   │   ├── config.py            
+│   │   ├── send.py               
+│   │   └── setting.py           
+├── data/
+│   └── faqs.csv                # FAQ dataset
+├── frontend/
+│   ├── index.html
+│   ├── styles.css      
+│   └── script.js      
+├── .env                     # API keys
+├── agent.db               # SQLite database
+├── requirements.txt         # Dependencie
+└──  README.md                # Documentation

@@ -1,0 +1,410 @@
+:root {
+    --primary-color: #1F2833;
+    --secondary-color: #C5C6C7;
+    --accent-color: #66FCF1;
+    --highlight-color: #46A29F;
+    --text-color: #FFFFFF;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --sidebar-width: 300px; /* Slightly wider for professional layout */
+    --transition: all 0.3s ease;
+    --gradient-bg: linear-gradient(135deg, #2A3441 0%, #3A4655 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #2A3441;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.app-header {
+    background-color: var(--primary-color);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: none;
+}
+
+.menu-toggle:hover {
+    color: var(--highlight-color);
+}
+
+.app-header h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--accent-color);
+    flex-grow: 1;
+}
+
+.user-info {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.chat-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    background: var(--gradient-bg);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.sidebar-header h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+.reservations-list {
+    padding: 1.5rem;
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--highlight-color) transparent;
+}
+
+.reservations-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.reservations-list::-webkit-scrollbar-thumb {
+    background-color: var(--highlight-color);
+    border-radius: 10px;
+}
+
+.reservation-item {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(145deg, #3A4655, #2A3441);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--box-shadow);
+}
+
+.reservation-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    border-color: var(--accent-color);
+}
+
+.reservation-item:active {
+    transform: translateY(0);
+    box-shadow: var(--box-shadow);
+}
+
+.reservation-item .reservation-details {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0.5rem;
+}
+
+.reservation-item .label {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.reservation-item .value {
+    color: var(--secondary-color);
+}
+
+.reservation-item .status {
+    margin-top: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--highlight-color);
+    color: var(--text-color);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    align-self: flex-start;
+}
+
+.no-reservations {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 1rem;
+    opacity: 0.7;
+}
+
+.chat-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #2A3441;
+}
+
+.messages {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--highlight-color) transparent;
+}
+
+.messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background-color: var(--highlight-color);
+    border-radius: 10px;
+}
+
+.welcome-message {
+    text-align: center;
+    padding: 3rem;
+    color: var(--secondary-color);
+}
+
+.welcome-message h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.message {
+    margin-bottom: 1.25rem;
+    max-width: 70%;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--border-radius);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.message.sent {
+    background-color: var(--highlight-color);
+    color: var(--text-color);
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+}
+
+.message.received {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    margin-right: auto;
+    border-bottom-left-radius: 4px;
+}
+
+.message-time {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin-top: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.input-area {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #2A3441;
+}
+
+.input-area form {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius);
+    background-color: #3A4655;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+.input-area input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(102, 252, 241, 0.2);
+}
+
+.send-btn {
+    padding: 0.75rem 1.25rem;
+    background-color: var(--highlight-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.send-btn:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.loading {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--accent-color);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.app-footer {
+    text-align: center;
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Mobile responsive design */
+@media (max-width: 768px) {
+    .app-container {
+        border-radius: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+    
+    .sidebar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        transform: translateX(-100%);
+        box-shadow: var(--box-shadow);
+    }
+    
+    .sidebar.open {
+        transform: translateX(0);
+        z-index: 1000;
+    }
+    
+    .message {
+        max-width: 85%;
+    }
+    
+    .app-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .sidebar {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .reservation-item {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+    }
+    
+    .reservation-item .reservation-details {
+        grid-template-columns: 70px 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .input-area {
+        padding: 0.75rem;
+    }
+    
+    .input-area input {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .send-btn {
+        padding: 0.5rem 1rem;
+    }
+    
+    .message {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .reservation-item {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .reservation-item .reservation-details {
+        grid-template-columns: 60px 1fr;
+        gap: 0.3rem;
+    }
+    
+    .reservation-item .status {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.4rem;
+    }
+}

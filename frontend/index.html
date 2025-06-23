@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Lumi</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1><i class="fas fa-robot"></i> Lumi</h1>
+        </header>
+        
+        <div class="chat-container">
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Your Reservations</h3>
+                </div>
+                <div class="reservations-list" id="reservationsList">
+                    <p class="no-reservations">No reservations found.</p>
+                </div>
+            </aside>
+            
+            <main class="chat-area">
+                <div class="messages" id="messages">
+                    <div class="welcome-message">
+                        <h2>Welcome to Agent Lumi</h2>
+                        <p>How I can assist you today?</p>
+                    </div>
+                </div>
+                
+                <div class="input-area">
+                    <form id="messageForm">
+                        <input type="text" id="messageInput" placeholder="Type your message..." autocomplete="off">
+                        <button type="submit" class="send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </main>
+        </div>
+
+        <footer class="app-footer">
+            <p>Powered by Neurosphere Lab</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
